@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About Wattwise, a student data visualisation project exploring appliance electricity use, calculation methods and the role of generative AI.">
+  <meta name="theme-color" content="#fafaf8">
+  <title>About Us | Wattwise · Appliance Energy Consumption Website</title>
+  <link rel="icon" type="image/png" href="assets/img/PowerIcon.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="header-inner container"><a class="brand" href="index.html" aria-label="Wattwise home"><img src="assets/img/PowerIcon.png" width="40" height="40" alt=""><span>wattwise<span class="brand-period">.</span></span></a><nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="televisions.html">Televisions</a><a href="insights.html">Insights</a><a href="about.html" aria-current="page">About us</a></nav><span class="header-note">A clearer view of energy</span></div></header>
+
+  <main id="main-content" class="container">
+    <section class="page-intro" aria-labelledby="about-title"><div><p class="eyebrow">About Wattwise</p><h1 id="about-title">Clarity starts <span class="serif-accent">with curiosity.</span></h1><p class="intro-description">A small project exploring the energy behind everyday life.</p></div><div class="intro-context"><span class="context-rule"></span><span>Learn. Explore. Understand.<br><strong>One appliance at a time.</strong></span></div></section>
+
+    <section class="about-layout" aria-label="Project background">
+      <article class="panel about-story"><h2>Making invisible energy a little more visible.</h2><p>Appliances are part of daily life, but the electricity they use can be hard to picture. Wattwise connects an appliance's power rating with how long you use it, so you can explore consumption and estimated cost together.</p><p>Created by Huy Tran for COS30049 Data Visualisation at Swinburne, this student project explores appliance energy consumption in an Australian household context.</p><div class="story-divider"></div><h3>How the numbers work</h3><ol class="method-list"><li><span class="method-number" aria-hidden="true">01</span><div><strong>Start with power and time.</strong><p>Daily energy (kWh) = power (W) × daily use (hours) ÷ 1,000.</p></div></li><li><span class="method-number" aria-hidden="true">02</span><div><strong>Extend the same daily routine.</strong><p>Monthly estimates use 30 days. Annual estimates use 365 days.</p></div></li><li><span class="method-number" aria-hidden="true">03</span><div><strong>Apply your electricity usage rate.</strong><p>Cost (AUD) = energy (kWh) × rate (cents per kWh) ÷ 100.</p></div></li></ol></article>
+      <aside class="panel project-card"><img src="assets/img/PowerIcon.png" alt="Wattwise power logo" width="72" height="72"><h2>wattwise.</h2><p>Appliance Energy Consumption Website</p><dl class="project-meta"><div><dt>Created by</dt><dd>Huy Tran</dd></div><div><dt>Unit</dt><dd>COS30049 · Data Visualisation</dd></div><div><dt>Context</dt><dd>Australian household energy</dd></div><div><dt>Data</dt><dd>Illustrative examples</dd></div></dl></aside>
+    </section>
+
+    <section class="acknowledgement" aria-labelledby="data-title"><div><h2 id="data-title">An honest view of the data</h2><p class="eyebrow">Examples, with context</p></div><div><p>The appliance wattages, television models and default electricity rate are illustrative placeholders. They are not measured data, actual product specifications or an Australian market average. For your own estimates, use your appliance's rating and the usage rate on your bill.</p><p>Comparisons assume constant power use. Actual consumption can change with appliance settings, operating cycles and standby behaviour. For official Australian energy rating information, visit <a class="source-link" href="https://www.energyrating.gov.au/" target="_blank" rel="noopener noreferrer">Energy Rating ↗</a>.</p><p>The <a class="source-link" href="insights.html">Insights page</a> is a separate analysis scaffold for Assignment 1. Its dataset has not been selected, its proposed KNIME workflow has not been executed, and no analytical findings are published yet.</p></div></section>
+
+    <section class="acknowledgement" id="ai-acknowledgement" aria-labelledby="ai-title"><div><h2 id="ai-title">Generative AI acknowledgement</h2><p class="eyebrow">A transparent process</p></div><div><p>OpenAI Codex assisted with the visual design, HTML, CSS, JavaScript, sample content and documentation. The interface takes inspiration from shadcn/ui's clean styling and composable design approach. The supplied power logo is used as provided.</p><p>Generated code needs human review. Understanding the calculations, verifying information, reviewing accessibility and documenting changes remain part of the learning process. This acknowledgement describes the assistance used; it does not imply that every generated statement has been independently verified.</p></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a class="footer-brand" href="index.html">wattwise.</a><p>© <span data-current-year>2026</span> Huy Tran</p><p class="ai-note">Created with assistance from OpenAI Codex. <a href="about.html#ai-acknowledgement">AI acknowledgement ↗</a></p></div></footer>
+</body>
+</html>
