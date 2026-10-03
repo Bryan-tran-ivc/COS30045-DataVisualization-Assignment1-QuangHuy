@@ -3611,7 +3611,7 @@ tbody tr:hover {
   color: #efd28e;
 }
 
-.workflow-download-card {
+.workflow-summary-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3622,19 +3622,15 @@ tbody tr:hover {
   padding: 27px;
 }
 
-.workflow-download-card h3 {
+.workflow-summary-card h3 {
   font-size: 1.15rem;
   margin: 8px 0;
 }
 
-.workflow-download-card p:not(.eyebrow) {
+.workflow-summary-card p:not(.eyebrow) {
   color: var(--muted);
   max-width: 660px;
   font-size: .875rem;
-}
-
-.workflow-download-card .button {
-  flex-shrink: 0;
 }
 
 .story-details {
@@ -3731,7 +3727,7 @@ tbody tr:hover {
 }
 
 @media (max-width: 760px) {
-  .workflow-download-card {
+  .workflow-summary-card {
     align-items: flex-start;
     flex-direction: column;
   }

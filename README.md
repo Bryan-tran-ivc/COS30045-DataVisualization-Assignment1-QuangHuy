@@ -1,6 +1,6 @@
 # Wattwise · Appliance Energy Consumption Website
 
-A responsive COS30045 Data Visualisation website. **Televisions** tells the Exercise 3 story “More stars do not guarantee less electricity” using only the supplied **3 October 2026** CSV. Home has an illustrative appliance calculator. There is no separate Insights page; the entire Exercise 3 story, charts, methods and workflow download are on Televisions.
+A responsive COS30045 Data Visualisation website. **Televisions** tells the Exercise 3 story “More stars do not guarantee less electricity” using only the supplied **3 October 2026** CSV. Home has an illustrative appliance calculator. There is no separate Insights page; the entire Exercise 3 story, charts, methods and workflow diagram are on Televisions.
 
 The user-provided power logo informs the amber palette. The interface takes visual inspiration from shadcn/ui, but uses HTML, CSS and vanilla JavaScript. No shadcn components or external charting library are installed.
 
@@ -51,9 +51,9 @@ The **meaning of star ratings is therefore not a wholly original concept absent 
 | Chart 2, 1:10–1:50 | Why does this happen? | Three rating series across four size cohorts | Along a line, the rating stays fixed while size and median energy rise. Vertically, size stays fixed while higher stars accompany lower energy. |
 | Chart 3, 1:50–2:20 | Are stars still useful? | Two zero-baseline median bars at 65 inches | 696.5 versus 250.5 kWh/year, about 64% lower. Only six registrations in each group. |
 | Recommendation, 2:20–2:45 | What should I do in a store? | Short decision rule and optional tariff illustration | Different sizes: compare annual kWh. Similar sizes and features: use stars too. |
-| Method, 2:45–3:00 | Can I trust this conclusion? | Workflow download and short scope disclosure | October only, one row per registration, labelled test energy rather than household bills. |
+| Method, 2:45–3:00 | Can I trust this conclusion? | Workflow diagram and short scope disclosure | October only, one row per registration, labelled test energy rather than household bills. |
 
-The page scrolls in this order without a timeline or presentation-mode controls. Detailed workflow steps and tables are expandable. Vietnamese presenter notes are included in deliverables/TV_Star_Story_Presenter_Notes.md.
+The page scrolls in this order without a timeline or presentation-mode controls. Detailed workflow steps and tables are expandable.
 
 ### Findings and chart choices
 
@@ -63,7 +63,7 @@ Because the smaller/low-star group's maximum (532) is below the larger/high-star
 
 An individual illustration is Samsung QA75Q70CA* (Submit_ID 151761, 75 inches, 5 stars, 580 kWh/year) versus Kogan KAQL55Q97T* (171487, 55 inches, 3 stars, 513). The illustration is not the evidence for the whole-cohort finding or a product recommendation.
 
-**Chart 2** uses median-energy lines for 3, 5 and 6 stars at nominal 55, 65, 75 and 85 inches. It is a quantitative size axis, **not a time series**. Different line styles and direct labels complement colour. Twelve cell counts range from 5 to 96 registrations. At 5 stars, the median rises from 332 at 55 inches to 750 at 85 inches. The exact cohort values and counts appear on the page and in data/star-trap-cohorts.csv.
+**Chart 2** uses median-energy lines for 3, 5 and 6 stars at nominal 55, 65, 75 and 85 inches. It is a quantitative size axis, **not a time series**. Different line styles and direct labels complement colour. Twelve cell counts range from 5 to 96 registrations. At 5 stars, the median rises from 332 at 55 inches to 750 at 85 inches. The exact cohort values and counts appear on the page and in assets/data/star-trap-cohorts.csv.
 
 **Chart 3** fixes nominal size at 65 inches. The 3-star median is 696.5 (n=6); the 7-star median is 250.5 (n=6), about 64.03% lower. This is a descriptive relationship, not an experiment in changing stars. Six observations per group limit generalisation.
 
@@ -111,21 +111,13 @@ Exact download provenance, actual extraction time and the licence of the particu
 
 Brand case variants are not merged because there is no brand-level ranking. Changing unrelated names would not improve this question. Extreme but valid records are not removed simply to make a cleaner chart. No external feature, purchase-price or sales data is invented.
 
-### New KNIME workflow and reproducibility
+### KNIME workflow and supporting evidence
 
-Download **deliverables/Wattwise_Star_Rating_Trap.knwf** from the Televisions page. This is a packaged copy of the student's **simplified 26-node KNIME workflow**, with the unmodified October CSV added to its workflow data area for import. The original student archive was not changed. Its left-to-right spine and short chart branches match the EX2-style layout. Three Bar Chart nodes (21, 25 and 30) have saved executed states; the screenshots embedded on Televisions are the actual views supplied by the student. The website's custom range, line and same-size plots use independently checked cohort values and give the groups clearer labels than the native screenshots.
+The Televisions page shows the diagram of the student's **simplified 26-node KNIME workflow** at `assets/img/workflow.svg`. Its left-to-right spine and short chart branches match the EX2-style layout. Three Bar Chart nodes (21, 25 and 30) have saved executed states; the screenshots embedded on Televisions are the actual views supplied by the student. The website's custom range, line and same-size plots use independently checked cohort values and give the groups clearer labels than the native screenshots.
 
-Import the .knwf using KNIME's workflow import option and choose a new destination/name. CSV Reader is configured for **Current workflow data area**. Open the three Bar Chart views. The simplified file contains no all-pairs branch, sensitivity branch or CSV Writer. We have not claimed that the repackaged workflow was rerun after import or verified on another KNIME version. See the included workflow guide for node status and how to reproduce the charts.
+The simplified workflow contains no all-pairs branch, sensitivity branch or CSV Writer. The website's chart data and additional registration-consistency, range and listing-weight sensitivity checks were produced by a separate Python analysis script. The original KNIME screenshots are `assets/img/knime-chart-1.png` through `knime-chart-3.png`; each is identified beside the relevant chart and can be opened at full resolution.
 
-The website's downloadable chart-data files under `data/` were produced by `scripts/analyse_star_trap.py`, **not** by KNIME. That script also produced the registration-consistency, range and listing-weight sensitivity checks. The original KNIME screenshots are `assets/img/knime-chart-1.png` through `knime-chart-3.png`; each is identified beside the relevant chart and can be opened at full resolution.
-
-Independent reproduction:
-
-~~~sh
-python3 scripts/analyse_star_trap.py /path/to/tv_2026_10_03.csv
-~~~
-
-The script produces the website's chart-data CSVs, a machine-readable audit summary and the line-chart SVG. It is an independent cross-check; the executed KNIME chart branches read and transform the raw CSV themselves.
+The retained supporting files are `assets/data/star-trap-cohorts.csv`, available through the chart 2 data download, and `assets/data/star-trap-analysis.json`, a machine-readable audit summary. The analysis script and KNIME workflow archive are not included in the current website distribution.
 
 ### Privacy
 
@@ -150,28 +142,40 @@ Avoid shaming a brand or implying that an energy label is dishonest. The stars a
 
 ## AI Declaration
 
-OpenAI Codex assisted with dataset analysis, selection and checking of the story, HTML/CSS/JavaScript, chart design, independent reproducibility scripts, README, presenter notes and an earlier KNIME workflow draft. The student supplied the brief, CSV and logo, chose the final star-rating direction, simplified the KNIME workflow and supplied screenshots of its three Bar Chart views. Codex placed those screenshots on the page and packaged a copy of the student-edited workflow with its source CSV.
+OpenAI Codex assisted with dataset analysis, selection and checking of the story, HTML/CSS/JavaScript, chart design, independent reproducibility scripts, README, presenter notes and an earlier KNIME workflow draft. The student supplied the brief, CSV and logo, chose the final star-rating direction, simplified the KNIME workflow and supplied screenshots of its three Bar Chart views. Codex placed those screenshots and the workflow diagram on the page.
 
-The three chart nodes in the supplied KNIME file have saved executed states. The reported statistics were separately checked against the CSV script. This is **not** a claim that the repackaged copy has been imported and rerun. The student should import and inspect the workflow, understand its groupings, confirm the CSV's provenance/licence, and review all AI-assisted work before submission. GitHub Classroom submission and deployment have not been performed.
+The three chart nodes in the student-supplied KNIME workflow have saved executed states. The reported statistics were separately checked against the CSV script. The student should understand the workflow's groupings, confirm the CSV's provenance/licence, and review all AI-assisted work before submission. GitHub Classroom submission and deployment have not been performed.
 
 ## Site structure
 
 ```text
-index.html                Illustrative home calculator and FAQ
-televisions.html          Exercise 3 TV data story, charts and data table
-about.html                Project context and AI acknowledgement
-assets/css/styles.css     Shared responsive styling
-assets/js/main.js         Home calculator, FAQ and footer year
-assets/img/PowerIcon.png  User-provided logo
-assets/img/knime-chart-1.png through knime-chart-3.png  Original KNIME chart screenshots
-scripts/summarise_tv.py   Read-only aggregate checks for the TV CSV
-scripts/analyse_star_trap.py  Independent October checks and chart-data exports
-assets/js/televisions.js  Editable illustrative tariff
-deliverables/Wattwise_Star_Rating_Trap.knwf  Student-simplified October workflow plus source CSV
+/
+├── index.html
+├── televisions.html
+├── about.html
+├── assets/
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   ├── main.js
+│   │   └── televisions.js
+│   ├── img/
+│   │   ├── PowerIcon.png
+│   │   ├── knime-chart-1.png
+│   │   ├── knime-chart-2.png
+│   │   ├── knime-chart-3.png
+│   │   ├── star-rating-grid.svg
+│   │   └── workflow.svg
+│   └── data/
+│       ├── star-trap-analysis.json
+│       └── star-trap-cohorts.csv
+└── README.md
 ```
+
+The three HTML pages and README stay at the project root. Styles, scripts and images use the recommended `assets/css/`, `assets/js/` and `assets/img/` directories. One additional asset directory is necessary: `assets/data/` holds the chart 2 CSV download and audit summary. This keeps supporting files together under `assets/` while preserving the Televisions page's chart-data download. All website links use relative paths, so the same structure works locally and when deployed in a subdirectory.
 
 The Home calculator's example wattages and default 30 cents/kWh are not Australian market averages. Its calculation is `watts × hours ÷ 1000` for daily kWh, multiplied by 30 or 365 for monthly/yearly energy, then by `cents per kWh ÷ 100` for estimated cost. It excludes daily supply charges and most usage variability. These illustrative calculator values must not be confused with the labelled annual TV data.
 
 ## Submission notes
 
-Place the files in the COS30045 GitHub Classroom repository and deploy the same relative folder structure to Mercury. Neither upload has been performed here. Include the new workflow and chart data. Before presenting, be ready to explain why stars account for size, why 715 comparisons are not 715 independent observations, why registrations differ from listing variants, and why the 30-cent tariff is only an example. The original February summary script remains a legacy reference; it does not feed the new Televisions page.
+Place the files in the COS30045 GitHub Classroom repository and deploy the same relative folder structure to Mercury. Neither upload has been performed here. Include the workflow diagram, chart screenshots and retained chart data. Before presenting, be ready to explain why stars account for size, why 715 comparisons are not 715 independent observations, why registrations differ from listing variants, and why the 30-cent tariff is only an example.
