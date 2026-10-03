@@ -247,9 +247,9 @@
           <p><b>Counting unit:</b> One Submit_ID is kept per registration. An independent CSV check found no within-ID
             conflicts in rating, size, energy, brand, technology or expiry in the filtered rows. Model names can
             represent variants. Registrations are not sales or households.</p>
-          <p><b>Transformations:</b> rounded inches = cm ÷ 2.54; explicit size × rating cohorts; median and count. An
+          <p><b>Transformations:</b> rounded inches = cm x 0.393701; explicit size x rating cohorts; median and count. An
             independent check also calculates minimum and maximum for Chart 1. The two ranges do not overlap: 532 &lt;
-            550. That proves the direction of all 11 × 65 possible cross-cohort pairings without a pair-join branch.</p>
+            550. That proves the direction of all 11 x 65 possible cross-cohort pairings without a pair-join branch.</p>
           <p><b>Independent sensitivity check:</b> retaining listing variants gives medians 513 and 598.5 kWh/year,
             rather than registration medians 514 and 598. The direction is unchanged. This does not remove all selection
             bias.</p>
@@ -258,7 +258,7 @@
             src="deliverables/Wattwise_Star_Rating_Trap/workflow.svg"
             alt="The student's simplified KNIME workflow with a left-to-right cleaning spine and three chart branches."
             loading="lazy">
-          <p>Import the .knwf through KNIME’s workflow import option. The raw CSV is included in its data area. The
+          <p>Import the .knwf through KNIME's workflow import option. The raw CSV is included in its data area. The
             three Bar Chart nodes 21, 25 and 30 have saved executed views. The 26-node workflow does not have a
             pair-join branch or CSV Writer; the website's chart-data files and additional range/sensitivity checks come
             from the independent CSV analysis script.</p>
@@ -282,7 +282,7 @@
           href="https://www.energyrating.gov.au/consumer-information/products/televisions" target="_blank"
           rel="noopener noreferrer">how TV stars account for size</a> and <a
           href="https://www.energy.gov.au/households/energy-rating" target="_blank" rel="noopener noreferrer">label
-          usage assumptions</a>. Verify the supplied CSV’s exact download provenance and licence before publishing
+          usage assumptions</a>. Verify the supplied CSV's exact download provenance and licence before publishing
         beyond coursework.</p>
     </section>
     <section class="table-section tv-data-table" aria-labelledby="data-table-title">

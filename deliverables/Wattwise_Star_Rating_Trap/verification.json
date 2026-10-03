@@ -1,0 +1,10 @@
+{
+  "source": "student-supplied simplified workflow archive",
+  "node_count": 26,
+  "executed_bar_chart_nodes": [21, 25, 30],
+  "all_pairs_branch_present": false,
+  "csv_writer_present": false,
+  "workflow_rerun_after_repackaging": false,
+  "raw_csv_embedded_in_downloadable_copy": true,
+  "source_sha256": "8aec4e0219377a17a0b12bfbe47e6a034a81bfc0da003c9b0e7fbc6e842b92b9"
+}
