@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 400" role="img" aria-labelledby="title desc">
+<title id="title">At the same star rating, bigger TVs use more electricity</title>
+<desc id="desc">Median labelled kWh per year for 3, 5 and 6 star registrations at 55, 65, 75 and 85 inches. Exact values and cohort counts appear in the page data table.</desc>
+<rect width="650" height="400" fill="#ffffff"/>
+<g font-family="Arial, sans-serif" font-size="13" fill="#65685d">
+<text x="55" y="26">Median labelled energy (kWh/year)</text>
+<line x1="75" x2="560" y1="320.0" y2="320.0" stroke="#e6e6de"/>
+<text x="63" y="324.0" text-anchor="end">0</text>
+<line x1="75" x2="560" y1="255.0" y2="255.0" stroke="#e6e6de"/>
+<text x="63" y="259.0" text-anchor="end">300</text>
+<line x1="75" x2="560" y1="190.0" y2="190.0" stroke="#e6e6de"/>
+<text x="63" y="194.0" text-anchor="end">600</text>
+<line x1="75" x2="560" y1="125.0" y2="125.0" stroke="#e6e6de"/>
+<text x="63" y="129.0" text-anchor="end">900</text>
+<line x1="75" x2="560" y1="60.0" y2="60.0" stroke="#e6e6de"/>
+<text x="63" y="64.0" text-anchor="end">1,200</text>
+<text x="95" y="345" text-anchor="middle">55″</text>
+<text x="245" y="345" text-anchor="middle">65″</text>
+<text x="395" y="345" text-anchor="middle">75″</text>
+<text x="545" y="345" text-anchor="middle">85″</text>
+<polyline points="95,208.633 245,169.092 395,119.583 545,66.283" fill="none" stroke="#a56829" stroke-width="3"/>
+<circle cx="95" cy="208.633" r="5" fill="#a56829"><title>55 inches, 3 stars: 514.0 kWh/year; n=11</title></circle>
+<circle cx="245" cy="169.092" r="5" fill="#a56829"><title>65 inches, 3 stars: 696.5 kWh/year; n=6</title></circle>
+<circle cx="395" cy="119.583" r="5" fill="#a56829"><title>75 inches, 3 stars: 925.0 kWh/year; n=11</title></circle>
+<circle cx="545" cy="66.283" r="5" fill="#a56829"><title>85 inches, 3 stars: 1171.0 kWh/year; n=5</title></circle>
+<text x="565" y="70.283" fill="#a56829">3 stars</text>
+<polyline points="95,248.067 245,224.450 395,190.433 545,157.500" fill="none" stroke="#39716b" stroke-width="3" stroke-dasharray="7 4"/>
+<circle cx="95" cy="248.067" r="5" fill="#39716b"><title>55 inches, 5 stars: 332.0 kWh/year; n=78</title></circle>
+<circle cx="245" cy="224.450" r="5" fill="#39716b"><title>65 inches, 5 stars: 441.0 kWh/year; n=96</title></circle>
+<circle cx="395" cy="190.433" r="5" fill="#39716b"><title>75 inches, 5 stars: 598.0 kWh/year; n=65</title></circle>
+<circle cx="545" cy="157.500" r="5" fill="#39716b"><title>85 inches, 5 stars: 750.0 kWh/year; n=33</title></circle>
+<text x="565" y="161.500" fill="#39716b">5 stars</text>
+<polyline points="95,264.100 245,242.000 395,217.300 545,196.825" fill="none" stroke="#5d658f" stroke-width="3" stroke-dasharray="2 4"/>
+<circle cx="95" cy="264.100" r="5" fill="#5d658f"><title>55 inches, 6 stars: 258.0 kWh/year; n=51</title></circle>
+<circle cx="245" cy="242.000" r="5" fill="#5d658f"><title>65 inches, 6 stars: 360.0 kWh/year; n=69</title></circle>
+<circle cx="395" cy="217.300" r="5" fill="#5d658f"><title>75 inches, 6 stars: 474.0 kWh/year; n=62</title></circle>
+<circle cx="545" cy="196.825" r="5" fill="#5d658f"><title>85 inches, 6 stars: 568.5 kWh/year; n=40</title></circle>
+<text x="565" y="200.825" fill="#5d658f">6 stars</text>
+<text x="320" y="376" text-anchor="middle">Nominal screen diagonal (inches), not time</text></g></svg>

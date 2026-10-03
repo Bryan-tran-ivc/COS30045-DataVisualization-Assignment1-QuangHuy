@@ -5,12 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="A data story for Australian TV shoppers: screen size shapes annual energy use, and same-size televisions can still differ substantially.">
+    content="More stars do not guarantee less electricity. An October TV data story comparing energy labels across screen sizes, with charts and a reproducible KNIME workflow.">
   <meta name="theme-color" content="#fafaf8">
-  <title>Choose a TV with clearer energy facts | Wattwise</title>
+  <title>More stars. Less electricity? | Wattwise</title>
   <link rel="icon" type="image/png" href="assets/img/PowerIcon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/televisions.js" defer></script>
 </head>
 
 <body>
@@ -20,211 +21,369 @@
           src="assets/img/PowerIcon.png" width="40" height="40" alt=""><span>wattwise<span
             class="brand-period">.</span></span></a>
       <nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="televisions.html"
-          aria-current="page">Televisions</a><a href="about.html">About us</a></nav>
-      <span class="header-note">A clearer view of energy</span>
+          aria-current="page">Televisions</a><a href="about.html">About us</a></nav><span class="header-note">A clearer
+        view of energy</span>
     </div>
   </header>
-
-  <main id="main-content" class="container tv-story">
+  <main id="main-content" class="container tv-story star-story">
     <section class="page-intro tv-story-intro" aria-labelledby="tv-title">
       <div>
-        <p class="eyebrow">TV energy · A data story for Australian shoppers</p>
-        <h1 id="tv-title">Pick the size. <span class="serif-accent">Then read the label.</span></h1>
-        <p class="intro-description">A larger screen usually uses more electricity. But even after you settle on a size,
-          the annual energy number can vary enough to be worth checking.</p><a class="button button-dark story-jump"
-          href="#size-story">Explore the evidence <span aria-hidden="true">↓</span></a>
+        <p class="eyebrow">Exercise 3 · A decision for TV shoppers</p>
+        <h1 id="tv-title">More stars.<br><span class="serif-accent">Less electricity?</span></h1>
+        <p class="intro-description">Not necessarily when the screen gets bigger. Stars describe efficiency relative to
+          screen size. If you are choosing between sizes, read the <strong>kWh/year</strong> number before assuming a
+          higher-star TV will cost less to run.</p><a class="button button-dark story-jump" href="#choice-story">See the
+          evidence <span aria-hidden="true">↓</span></a>
       </div>
-      <aside class="story-intro-card" aria-label="Story at a glance"><span class="eyebrow">The question</span>
-        <p>How much can annual labelled electricity use differ between TVs of the same size?</p><span
-          class="story-source-tag">4,508 Australian-available entries · 15 Feb 2026 snapshot</span>
+      <aside class="story-intro-card" aria-label="The central finding"><span class="eyebrow">The buying trap</span>
+        <p>A 75″ 5-star TV can use more electricity than a 55″ 3-star TV.</p><span class="story-source-tag">2,702 unique
+          registrations in scope<br>Supplied 3 October 2026 snapshot</span>
       </aside>
     </section>
-
-    <section id="size-story" class="story-chapter" aria-labelledby="size-title">
+    <section id="choice-story" class="story-chapter" aria-labelledby="choice-title">
       <div class="section-heading">
         <div class="section-label"><span class="section-index">01</span>
-          <h2 id="size-title">First, size changes the baseline</h2>
-        </div><span class="subtle-label">Median labelled energy · kWh per year</span>
+          <h2 id="choice-title">Two more stars. Still more electricity.</h2>
+        </div><span class="subtle-label">Every registration in these two cohorts</span>
       </div>
       <div class="story-grid">
-        <figure class="panel story-figure" aria-labelledby="size-chart-title" aria-describedby="size-chart-note">
+        <figure class="panel story-figure" aria-labelledby="choice-chart-title" aria-describedby="choice-note">
           <figcaption>
-            <p class="eyebrow">Chart 1 · Screen size</p>
-            <h3 id="size-chart-title">Typical labelled energy rises with screen size</h3>
-            <p>Median annual consumption for five common nominal sizes.</p>
+            <p class="eyebrow">Chart 1 · The cross-size comparison</p>
+            <h3 id="choice-chart-title">The two energy ranges do not overlap</h3>
+            <p>Annual labelled energy. Lines show minimum–maximum; dots show medians.</p>
           </figcaption>
-          <div class="story-bars" role="img"
-            aria-label="Median annual labelled energy: 43 inches 248; 55 inches 357; 65 inches 462; 75 inches 608; 85 inches 794 kilowatt-hours per year. All bars start at zero and use a scale to 900.">
-            <div class="story-bar-row"><span class="story-bar-label">43″ <small>n = 249</small></span><span
-                class="story-bar-track"><span class="story-bar-fill"
-                  style="width:27.56%"></span></span><strong>248</strong></div>
-            <div class="story-bar-row is-focus"><span class="story-bar-label">55″ <small>n = 736</small></span><span
-                class="story-bar-track"><span class="story-bar-fill"
-                  style="width:39.67%"></span></span><strong>357</strong></div>
-            <div class="story-bar-row"><span class="story-bar-label">65″ <small>n = 713</small></span><span
-                class="story-bar-track"><span class="story-bar-fill"
-                  style="width:51.33%"></span></span><strong>462</strong></div>
-            <div class="story-bar-row"><span class="story-bar-label">75″ <small>n = 578</small></span><span
-                class="story-bar-track"><span class="story-bar-fill"
-                  style="width:67.56%"></span></span><strong>608</strong></div>
-            <div class="story-bar-row"><span class="story-bar-label">85″ <small>n = 312</small></span><span
-                class="story-bar-track"><span class="story-bar-fill"
-                  style="width:88.22%"></span></span><strong>794</strong></div>
-          </div>
-          <div class="story-bar-axis" aria-hidden="true"><span>0</span><span>300</span><span>600</span><span>900</span>
-          </div>
-          <p class="figure-note" id="size-chart-note">Nominal inches = screen diagonal in centimetres ÷ 2.54, rounded to
-            the nearest inch. Each bar is the median of registry entries in that size, not a prediction for every TV.
-          </p>
+          <p class="mobile-chart-hint">Swipe across the chart to see its full scale.</p>
+          <svg class="choice-range-svg" viewBox="0 0 670 280" role="img" aria-labelledby="range-title range-desc">
+            <title id="range-title">All 75-inch 5-star registrations use more energy than all 55-inch 3-star
+              registrations in these cohorts</title>
+            <desc id="range-desc">55 inches, 3 stars: 11 registrations, 499 to 532 kWh/year, median 514. 75 inches, 5
+              stars: 65 registrations, 550 to 612 kWh/year, median 598. Common axis starts at zero and ends at 700
+              kWh/year.</desc>
+            <g stroke="#e6e6dc" stroke-width="1">
+              <path d="M190 40V204 M316.86 40V204 M443.71 40V204 M570.57 40V204 M634 40V204" />
+            </g>
+            <g font-family="Arial,sans-serif" font-size="15" fill="#45483e"><text x="10" y="83" font-weight="700">55″ ·
+                3 stars</text><text x="10" y="105" font-size="12" fill="#74776b">11 registrations</text><text x="10"
+                y="166" font-weight="700">75″ · 5 stars</text><text x="10" y="188" font-size="12" fill="#74776b">65
+                registrations</text></g>
+            <g stroke="#39716b" stroke-width="6" stroke-linecap="round">
+              <path d="M506.51 88H527.44" />
+            </g>
+            <g stroke="#39716b" stroke-width="2">
+              <path d="M506.51 78V98 M527.44 78V98" />
+            </g>
+            <circle cx="516.02" cy="88" r="7" fill="#39716b" stroke="#fff" stroke-width="2" />
+            <g stroke="#a56829" stroke-width="6" stroke-linecap="round">
+              <path d="M538.86 171H578.18" />
+            </g>
+            <g stroke="#a56829" stroke-width="2">
+              <path d="M538.86 161V181 M578.18 161V181" />
+            </g>
+            <circle cx="569.30" cy="171" r="7" fill="#a56829" stroke="#fff" stroke-width="2" />
+            <g font-family="Arial,sans-serif" font-size="13" text-anchor="middle"><text x="516.02" y="63" fill="#39716b"
+                font-weight="700">Median 514</text><text x="516.02" y="124" fill="#65685d">499–532</text><text
+                x="569.30" y="146" fill="#a56829" font-weight="700">Median 598</text><text x="569.30" y="207"
+                fill="#65685d">550–612</text></g>
+            <path d="M190 224H634" stroke="#a4a89b" />
+            <g font-family="Arial,sans-serif" font-size="12" fill="#65685d" text-anchor="middle"><text x="190"
+                y="243">0</text><text x="316.86" y="243">200</text><text x="443.71" y="243">400</text><text x="570.57"
+                y="243">600</text><text x="634" y="243">700</text><text x="412" y="272">Labelled energy consumption
+                (kWh/year)</text></g>
+          </svg>
+          <p class="figure-note" id="choice-note">This is not a selected pair of products: all <strong>65 × 11 =
+              715</strong> cross-cohort comparisons give the same direction. These repeated comparisons are not 715
+            independent observations, or a probability for the whole TV market.</p>
+          <details class="knime-evidence">
+            <summary>See the original KNIME bar chart</summary>
+            <p>Blue/top: 55″, 3 stars (n=11; median 514). Green/bottom: 75″, 5 stars (n=65; median 598 kWh/year). The
+              KNIME screenshot omits these group names, so they are supplied here.</p><a
+              href="assets/img/knime-chart-1.png" target="_blank" rel="noopener noreferrer"><img
+                src="assets/img/knime-chart-1.png"
+                alt="KNIME Bar Chart: median annual labelled energy is 514 kWh for the 55-inch 3-star group and 598 kWh for the 75-inch 5-star group."
+                loading="lazy"></a><small>Original view from KNIME Bar Chart node 21 · Open full-size image ↗</small>
+          </details>
         </figure>
-        <aside class="story-takeaway"><span class="eyebrow">What this means</span><strong>2.2×</strong>
-          <h3>the median energy at 85″ versus 55″</h3>
-          <p>In this snapshot, 85-inch entries have a median of 794 kWh/year; 55-inch entries have 357. Size is a
-            sensible first decision, not an efficiency score.</p>
+        <aside class="story-takeaway story-takeaway-warm"><span class="eyebrow">The consequence</span><strong>16%
+            <small>more</small></strong>
+          <h3>labelled energy at the higher-star, larger-size median</h3>
+          <p>598 versus 514 kWh/year. Adding two stars does not offset the extra screen size in this comparison.</p>
+          <p class="specific-example">One actual example: Samsung QA75Q70CA* (75″, 5 stars, <b>580</b>) versus Kogan
+            KAQL55Q97T* (55″, 3 stars, <b>513</b> kWh/year). Neither is a product recommendation.</p>
         </aside>
       </div>
     </section>
-
-    <section id="same-size-story" class="story-chapter" aria-labelledby="same-size-title">
+    <section id="rating-story" class="story-chapter" aria-labelledby="rating-title">
       <div class="section-heading">
         <div class="section-label"><span class="section-index">02</span>
-          <h2 id="same-size-title">Then, compare within your size</h2>
-        </div><span class="subtle-label">736 entries at nominal 55 inches</span>
+          <h2 id="rating-title">A star rating needs a screen size</h2>
+        </div><span class="subtle-label">Two variables, one comparison grid</span>
       </div>
       <div class="story-grid">
-        <figure class="panel story-figure" aria-labelledby="range-chart-title" aria-describedby="range-chart-note">
+        <figure class="panel story-figure" aria-labelledby="grid-title" aria-describedby="grid-note">
           <figcaption>
-            <p class="eyebrow">Chart 2 · A closer look at 55″</p>
-            <h3 id="range-chart-title">The middle 80% spans about 267–466 kWh/year</h3>
-            <p>10th percentile, median and 90th percentile of labelled annual consumption.</p>
+            <p class="eyebrow">Chart 2 · Separate size from efficiency</p>
+            <h3 id="grid-title">The same stars can mean very different kWh</h3>
+            <p>Median labelled energy for each size × star-rating cohort.</p>
           </figcaption>
-          <div class="range-chart" role="img"
-            aria-label="Among 736 nominal 55-inch entries, the 10th percentile is 266.5, the median is 357, and the 90th percentile is 466 kilowatt-hours per year. The horizontal scale runs from zero to 600.">
-            <div class="range-plot"><span class="range-grid" aria-hidden="true"></span><span class="range-band"
-                aria-hidden="true"></span><span class="range-marker range-start" aria-hidden="true"></span><span
-                class="range-marker range-middle" aria-hidden="true"></span><span class="range-marker range-end"
-                aria-hidden="true"></span></div>
-            <div class="range-labels"><span><strong>267</strong><small>10th
-                  percentile</small></span><span><strong>357</strong><small>Median</small></span><span><strong>466</strong><small>90th
-                  percentile</small></span></div>
-            <div class="range-axis" aria-hidden="true"><span>0</span><span>200</span><span>400</span><span>600
-                kWh/year</span></div>
-          </div>
-          <p class="figure-note" id="range-chart-note">The coloured band shows the 10th-to-90th-percentile range, not
-            the minimum and maximum. It compares registered entries, including multiple entries for some model names.
-          </p>
+          <p class="mobile-chart-hint">Swipe across the chart to see all four sizes.</p>
+          <img class="star-grid-chart" src="assets/img/star-rating-grid.svg" width="650" height="400"
+            alt="Three lines for 3, 5 and 6 stars. At each rating, median labelled energy rises from 55 to 85 inches. At each size, the higher-star cohort has a lower median. Exact values and sample sizes are in the table below.">
+          <p class="figure-note" id="grid-note">Read <strong>along a line</strong>: hold stars fixed and change size.
+            Read <strong>vertically at a size</strong>: hold size fixed and compare ratings. Lines connect four size
+            cohorts, not years. Cohort sizes range from 5 to 96 registrations; they are not sales-weighted. Line styles
+            and direct labels also distinguish ratings without relying on colour.</p>
+          <details class="knime-evidence">
+            <summary>See the original KNIME bar chart</summary>
+            <p>The 12 bars are ordered in three blocks: 3-star, 5-star, then 6-star. Within each block the sizes are
+              55″, 65″, 75″ and 85″. The screenshot does not display those cohort labels; the exact values and sample
+              sizes are in the table below.</p><a href="assets/img/knime-chart-2.png" target="_blank"
+              rel="noopener noreferrer"><img src="assets/img/knime-chart-2.png"
+                alt="KNIME Bar Chart of 12 size-by-star cohort medians. At each rating, energy rises with screen size; at each size, higher ratings correspond to lower medians. Exact cohorts are identified in the accompanying text and table."
+                loading="lazy"></a><small>Original view from KNIME Bar Chart node 30 · Open full-size image ↗</small>
+          </details>
         </figure>
-        <aside class="story-takeaway story-takeaway-warm"><span class="eyebrow">The useful comparison</span><strong>≈200
-            <small>kWh/year</small></strong>
-          <h3>between the 10th and 90th percentiles</h3>
-          <p>At an illustrative 30¢/kWh, that gap corresponds to about <b>$60 per year</b> under label test assumptions.
-            It is not a promised saving on anyone’s bill.</p>
+        <aside class="story-takeaway"><span class="eyebrow">Why the label works this way</span><strong>5 stars</strong>
+          <h3>is an efficiency rating, not a fixed electricity allowance</h3>
+          <p>The 5-star median is <b>332</b> kWh/year at 55″ and <b>750</b> at 85″. Stars account for size, so they are
+            useful when comparing similar-size TVs.</p><a class="text-link"
+            href="https://www.energyrating.gov.au/consumer-information/products/televisions" target="_blank"
+            rel="noopener noreferrer">Official explanation of TV stars ↗</a>
         </aside>
       </div>
     </section>
-
-    <section class="story-chapter story-resolution" aria-labelledby="decision-title">
+    <section id="same-size-story" class="story-chapter" aria-labelledby="same-size-title">
       <div class="section-heading">
         <div class="section-label"><span class="section-index">03</span>
-          <h2 id="decision-title">What should a shopper do?</h2>
+          <h2 id="same-size-title">Keep the size. Then use the stars.</h2>
+        </div><span class="subtle-label">A controlled-size descriptive comparison</span>
+      </div>
+      <div class="story-grid">
+        <figure class="panel story-figure" aria-labelledby="same-chart-title" aria-describedby="same-note">
+          <figcaption>
+            <p class="eyebrow">Chart 3 · Both groups are 65″</p>
+            <h3 id="same-chart-title">Higher stars accompany a lower median at the same size</h3>
+            <p>Median labelled energy in two 65-inch rating cohorts.</p>
+          </figcaption>
+          <div class="story-bars" role="img"
+            aria-label="65-inch 3-star TVs, six registrations, median 696.5 kWh/year. 65-inch 7-star TVs, six registrations, median 250.5. Both bars start at zero and use a maximum of 750 kWh/year.">
+            <div class="story-bar-row"><span class="story-bar-label">3 stars <small>65″ · n = 6</small></span><span
+                class="story-bar-track"><span class="story-bar-fill"
+                  style="width:92.8667%"></span></span><strong>696.5</strong></div>
+            <div class="story-bar-row is-focus"><span class="story-bar-label">7 stars <small>65″ · n =
+                  6</small></span><span class="story-bar-track"><span class="story-bar-fill"
+                  style="width:33.4%"></span></span><strong>250.5</strong></div>
+          </div>
+          <div class="story-bar-axis" aria-hidden="true"><span>0</span><span>250</span><span>500</span><span>750</span>
+          </div>
+          <p class="figure-note" id="same-note">About <strong>64% lower</strong> at the 7-star cohort median. Each group
+            contains only six registrations. This describes the snapshot; it does not prove that changing a star rating
+            causes a saving, or that the TVs match on technology, features or price.</p>
+          <details class="knime-evidence">
+            <summary>See the original KNIME bar chart</summary>
+            <p>Blue/top: 65″, 3 stars (n=6; median 696.5). Green/bottom: 65″, 7 stars (n=6; median 250.5 kWh/year). The
+              KNIME screenshot omits these group names, so they are supplied here.</p><a
+              href="assets/img/knime-chart-3.png" target="_blank" rel="noopener noreferrer"><img
+                src="assets/img/knime-chart-3.png"
+                alt="KNIME Bar Chart: at 65 inches, the 3-star median is 696.5 kWh per year and the 7-star median is 250.5 kWh per year."
+                loading="lazy"></a><small>Original view from KNIME Bar Chart node 25 · Open full-size image ↗</small>
+          </details>
+        </figure>
+        <aside class="story-takeaway"><span class="eyebrow">A fair use of stars</span><strong>Same size</strong>
+          <h3>is the starting point for an efficiency comparison</h3>
+          <p>Stars are not useless. They answer a different question from annual kWh: “How efficient is this TV for its
+            size?” Check the features you need as well.</p>
+        </aside>
+      </div>
+    </section>
+    <section class="story-chapter story-resolution" aria-labelledby="decision-title">
+      <div class="section-heading">
+        <div class="section-label"><span class="section-index">04</span>
+          <h2 id="decision-title">Shop for the screen you need, not the star count alone</h2>
         </div>
       </div>
       <div class="resolution-card">
         <div>
-          <p class="eyebrow">A practical shortlist</p>
-          <h3>Choose the size that fits. Compare the annual kWh on similar TVs.</h3>
+          <p class="eyebrow">Take this to the store</p>
+          <h3>Different sizes?<br>Compare kWh/year.<br>Similar sizes? Stars help.</h3>
         </div>
         <div>
-          <p>Once you know the screen size and features you need, put two or three models side by side. A lower labelled
-            kWh/year means a lower estimated energy cost under the same test conditions. Use your own electricity usage
-            rate to estimate dollars. The star rating is most meaningful for TVs of similar size and features.</p><a
-            class="text-link" href="https://www.energyrating.gov.au/consumer-information/products/televisions"
-            target="_blank" rel="noopener noreferrer">See the official TV comparison guidance <span
-              aria-hidden="true">↗</span></a>
+          <p>Choose a screen size that meets your needs. Compare the annual labelled kWh of your shortlist, then use
+            stars to judge efficiency among similar-size, similar-feature TVs. A higher-star larger screen is not
+            automatically the cheaper one to run.</p>
+          <div class="tariff-example"><label for="story-tariff">Illustrative electricity usage rate (AUD
+              cents/kWh)</label><input id="story-tariff" type="number" min="1" max="200" step="1" value="30"
+              inputmode="decimal" aria-describedby="tariff-note">
+            <p id="tariff-note">The 84 kWh/year difference between the two cohort medians is <strong
+                id="story-cost">$25.20/year</strong> at this rate. This compares medians under label assumptions, not a
+              promised saving between two products.</p><noscript>
+              <p>The example uses 30 cents/kWh. Enable JavaScript to change the rate.</p>
+            </noscript>
+          </div>
         </div>
       </div>
     </section>
-
-    <section class="story-chapter story-method" aria-labelledby="method-title">
-      <div class="section-heading">
-        <div class="section-label"><span class="section-index">04</span>
-          <h2 id="method-title">Read the evidence carefully</h2>
-        </div>
-      </div>
-      <div class="method-grid">
-        <div>
-          <h3>What we analysed</h3>
-          <p>The supplied <code>tv_2026_02_15.csv</code> contains 4,724 registry rows. We kept 4,508 entries marked
-            Available and listing Australia in SoldIn, with valid positive screen size and labelled kWh/year. The charts
-            use medians and linearly interpolated percentiles. Full counts and reproducible steps are in the README.</p>
-        </div>
-        <div>
-          <h3>What it cannot tell us</h3>
-          <p>These are registered product entries, not sales or ownership. The annual label is a standardised estimate,
-            based on 10 hours of viewing plus 14 hours of standby per day; real settings and usage change the result.
-            Rows may represent multiple registrations or variants of a model. The data alone cannot rank popular TVs,
-            guarantee availability in a shop or prove a brand is better.</p>
-        </div>
-      </div>
-      <p class="story-source-line">Source context: <a
-          href="https://www.energyrating.gov.au/about-us/gems-regulator/registered-appliance-and-equipment-data"
-          target="_blank" rel="noopener noreferrer">Energy Rating registered product data</a> and <a
-          href="https://www.energyrating.gov.au/consumer-information/understand-energy-rating-label" target="_blank"
-          rel="noopener noreferrer">label methodology</a>. The exact provenance and licence of the supplied local CSV
-        still need to be confirmed before publication beyond class work.</p>
-    </section>
-
-    <section class="table-section tv-data-table" aria-labelledby="data-table-title">
+    <section class="story-chapter story-method" aria-labelledby="workflow-title">
       <div class="section-heading">
         <div class="section-label"><span class="section-index">05</span>
-          <h2 id="data-table-title">Chart values in a table</h2>
-        </div><span class="subtle-label">Accessible data alternative</span>
+          <h2 id="workflow-title">The work behind the story</h2>
+        </div><span class="subtle-label">New KNIME workflow · October data only</span>
       </div>
-      <div class="table-wrap" tabindex="0" role="region"
-        aria-label="Television chart data table; scroll horizontally on small screens">
-        <table>
-          <caption>Median labelled energy by nominal TV size in the filtered 15 February 2026 snapshot</caption>
-          <thead>
-            <tr>
-              <th scope="col">Nominal size</th>
-              <th scope="col">Registry entries</th>
-              <th scope="col">Median kWh/year</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">43 inches</th>
-              <td>249</td>
-              <td>248</td>
-            </tr>
-            <tr>
-              <th scope="row">55 inches</th>
-              <td>736</td>
-              <td>357</td>
-            </tr>
-            <tr>
-              <th scope="row">65 inches</th>
-              <td>713</td>
-              <td>462</td>
-            </tr>
-            <tr>
-              <th scope="row">75 inches</th>
-              <td>578</td>
-              <td>608</td>
-            </tr>
-            <tr>
-              <th scope="row">85 inches</th>
-              <td>312</td>
-              <td>794</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="workflow-download-card">
+        <div>
+          <p class="eyebrow">Reproduce the evidence</p>
+          <h3>From raw registrations to a buying comparison</h3>
+          <p>Your simplified, left-to-right 26-node KNIME workflow has cleaning and transformation steps and three
+            executed Bar Chart views. The three original chart screenshots appear above.</p>
+        </div><a class="button button-dark" href="deliverables/Wattwise_Star_Rating_Trap.knwf" download>Download KNIME
+          workflow ↓</a>
       </div>
-      <p class="table-note">For 55 inches (n = 736): 10th percentile 266.5 (shown as 267), median 357 and 90th
-        percentile 466 kWh/year.</p>
+      <details class="story-details">
+        <summary>See the workflow and processing checks</summary>
+        <div class="details-body">
+          <p><b>Scope:</b> 5,340 raw rows → 5,032 Australia → 4,845 Available → 4,844 Approved → 4,842 unexpired listing
+            rows → 2,702 unique registrations. One expired registration accounts for two excluded listing rows. Required
+            numeric-field review contains zero rows.</p>
+          <p><b>Counting unit:</b> One Submit_ID is kept per registration. An independent CSV check found no within-ID
+            conflicts in rating, size, energy, brand, technology or expiry in the filtered rows. Model names can
+            represent variants. Registrations are not sales or households.</p>
+          <p><b>Transformations:</b> rounded inches = cm ÷ 2.54; explicit size × rating cohorts; median and count. An
+            independent check also calculates minimum and maximum for Chart 1. The two ranges do not overlap: 532 &lt;
+            550. That proves the direction of all 11 × 65 possible cross-cohort pairings without a pair-join branch.</p>
+          <p><b>Independent sensitivity check:</b> retaining listing variants gives medians 513 and 598.5 kWh/year,
+            rather than registration medians 514 and 598. The direction is unchanged. This does not remove all selection
+            bias.</p>
+          <p><a class="text-link" href="deliverables/Wattwise_Star_Rating_Trap/workflow.svg" target="_blank">Open the
+              native workflow diagram ↗</a></p><img class="workflow-preview"
+            src="deliverables/Wattwise_Star_Rating_Trap/workflow.svg"
+            alt="The student's simplified KNIME workflow with a left-to-right cleaning spine and three chart branches."
+            loading="lazy">
+          <p>Import the .knwf through KNIME’s workflow import option. The raw CSV is included in its data area. The
+            three Bar Chart nodes 21, 25 and 30 have saved executed views. The 26-node workflow does not have a
+            pair-join branch or CSV Writer; the website's chart-data files and additional range/sensitivity checks come
+            from the independent CSV analysis script.</p>
+        </div>
+      </details>
+      <div class="method-grid">
+        <div>
+          <h3>Source and context</h3>
+          <p>All statistics here use only the supplied <code>tv_2026_10_03.csv</code>. The snapshot date comes from its
+            filename. Star2 is the label-linked rating. The CSV describes registrations, not sales, prices or a survey
+            of buyers. We have not measured how often buyers misunderstand stars.</p>
+        </div>
+        <div>
+          <h3>What the charts cannot promise</h3>
+          <p>Registered availability does not guarantee shop stock. Features and screen technology are not matched
+            across cohorts. Labelled annual consumption uses standard test conditions with 10 hours viewing and 14 hours
+            standby per day; real use and bills differ. Very small groups should not be generalised.</p>
+        </div>
+      </div>
+      <p class="story-source-line">Official context: <a
+          href="https://www.energyrating.gov.au/consumer-information/products/televisions" target="_blank"
+          rel="noopener noreferrer">how TV stars account for size</a> and <a
+          href="https://www.energy.gov.au/households/energy-rating" target="_blank" rel="noopener noreferrer">label
+          usage assumptions</a>. Verify the supplied CSV’s exact download provenance and licence before publishing
+        beyond coursework.</p>
+    </section>
+    <section class="table-section tv-data-table" aria-labelledby="data-table-title">
+      <div class="section-heading">
+        <div class="section-label"><span class="section-index">06</span>
+          <h2 id="data-table-title">The chart values, without the charts</h2>
+        </div><a class="text-link" href="data/star-trap-cohorts.csv" download>Download chart 2 data ↓</a>
+      </div>
+      <details class="story-details">
+        <summary>Show accessible data tables</summary>
+        <div class="details-body">
+          <div class="table-wrap" tabindex="0" role="region"
+            aria-label="Comparison values, scroll horizontally if needed">
+            <table>
+              <caption>Charts 1 and 3: unique registration cohorts in the filtered 3 October snapshot</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Chart and cohort</th>
+                  <th scope="col">n</th>
+                  <th scope="col">Minimum</th>
+                  <th scope="col">Median</th>
+                  <th scope="col">Maximum</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Chart 1 · 55″ / 3 stars</th>
+                  <td>11</td>
+                  <td>499</td>
+                  <td>514</td>
+                  <td>532</td>
+                </tr>
+                <tr>
+                  <th scope="row">Chart 1 · 75″ / 5 stars</th>
+                  <td>65</td>
+                  <td>550</td>
+                  <td>598</td>
+                  <td>612</td>
+                </tr>
+                <tr>
+                  <th scope="row">Chart 3 · 65″ / 3 stars</th>
+                  <td>6</td>
+                  <td>661</td>
+                  <td>696.5</td>
+                  <td>725</td>
+                </tr>
+                <tr>
+                  <th scope="row">Chart 3 · 65″ / 7 stars</th>
+                  <td>6</td>
+                  <td>240</td>
+                  <td>250.5</td>
+                  <td>288</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">All energy values are labelled kWh/year. n counts registrations, not sales. 715 pair
+            comparisons: all have a positive larger-minus-smaller difference, ranging from 18 to 113 kWh/year.</p>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Size and star median grid">
+            <table>
+              <caption>Chart 2: median kWh/year (number of registrations in parentheses)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Nominal size</th>
+                  <th scope="col">3 stars</th>
+                  <th scope="col">5 stars</th>
+                  <th scope="col">6 stars</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">55″</th>
+                  <td>514 (11)</td>
+                  <td>332 (78)</td>
+                  <td>258 (51)</td>
+                </tr>
+                <tr>
+                  <th scope="row">65″</th>
+                  <td>696.5 (6)</td>
+                  <td>441 (96)</td>
+                  <td>360 (69)</td>
+                </tr>
+                <tr>
+                  <th scope="row">75″</th>
+                  <td>925 (11)</td>
+                  <td>598 (65)</td>
+                  <td>474 (62)</td>
+                </tr>
+                <tr>
+                  <th scope="row">85″</th>
+                  <td>1,171 (5)</td>
+                  <td>750 (33)</td>
+                  <td>568.5 (40)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner"><a class="footer-brand" href="index.html">wattwise.</a>
       <p>© <span data-current-year>2026</span> Huy Tran</p>
