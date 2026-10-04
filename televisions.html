@@ -96,9 +96,7 @@
             independent observations, or a probability for the whole TV market.</p>
           <details class="knime-evidence">
             <summary>See the original KNIME bar chart</summary>
-            <p>Blue/top: 55″, 3 stars (n=11; median 514). Green/bottom: 75″, 5 stars (n=65; median 598 kWh/year). The
-              KNIME screenshot omits these group names, so they are supplied here.</p><a
-              href="assets/img/knime-chart-1.png" target="_blank" rel="noopener noreferrer"><img
+            <a href="assets/img/knime-chart-1.png" target="_blank" rel="noopener noreferrer"><img
                 src="assets/img/knime-chart-1.png"
                 alt="KNIME Bar Chart: median annual labelled energy is 514 kWh for the 55-inch 3-star group and 598 kWh for the 75-inch 5-star group."
                 loading="lazy"></a><small>Original view from KNIME Bar Chart node 21 · Open full-size image ↗</small>
@@ -135,10 +133,8 @@
             and direct labels also distinguish ratings without relying on colour.</p>
           <details class="knime-evidence">
             <summary>See the original KNIME bar chart</summary>
-            <p>The 12 bars are ordered in three blocks: 3-star, 5-star, then 6-star. Within each block the sizes are
-              55″, 65″, 75″ and 85″. The screenshot does not display those cohort labels; the exact values and sample
-              sizes are in the table below.</p><a href="assets/img/knime-chart-2.png" target="_blank"
-              rel="noopener noreferrer"><img src="assets/img/knime-chart-2.png"
+            <a href="assets/img/knime-chart-2.png" target="_blank" rel="noopener noreferrer"><img
+                src="assets/img/knime-chart-2.png"
                 alt="KNIME Bar Chart of 12 size-by-star cohort medians. At each rating, energy rises with screen size; at each size, higher ratings correspond to lower medians. Exact cohorts are identified in the accompanying text and table."
                 loading="lazy"></a><small>Original view from KNIME Bar Chart node 30 · Open full-size image ↗</small>
           </details>
@@ -181,9 +177,7 @@
             causes a saving, or that the TVs match on technology, features or price.</p>
           <details class="knime-evidence">
             <summary>See the original KNIME bar chart</summary>
-            <p>Blue/top: 65″, 3 stars (n=6; median 696.5). Green/bottom: 65″, 7 stars (n=6; median 250.5 kWh/year). The
-              KNIME screenshot omits these group names, so they are supplied here.</p><a
-              href="assets/img/knime-chart-3.png" target="_blank" rel="noopener noreferrer"><img
+            <a href="assets/img/knime-chart-3.png" target="_blank" rel="noopener noreferrer"><img
                 src="assets/img/knime-chart-3.png"
                 alt="KNIME Bar Chart: at 65 inches, the 3-star median is 696.5 kWh per year and the 7-star median is 250.5 kWh per year."
                 loading="lazy"></a><small>Original view from KNIME Bar Chart node 25 · Open full-size image ↗</small>
@@ -233,33 +227,41 @@
         <div>
           <p class="eyebrow">How the evidence was prepared</p>
           <h3>From raw registrations to a buying comparison</h3>
-          <p>Your simplified, left-to-right 26-node KNIME workflow has cleaning and transformation steps and three
-            executed Bar Chart views. The three original chart screenshots appear above.</p>
+          <p>The full 26-node KNIME workflow can be observed below.</p>
         </div>
       </div>
       <details class="story-details">
         <summary>See the workflow and processing checks</summary>
         <div class="details-body">
-          <p><b>Scope:</b> 5,340 raw rows → 5,032 Australia → 4,845 Available → 4,844 Approved → 4,842 unexpired listing
-            rows → 2,702 unique registrations. One expired registration accounts for two excluded listing rows. Required
-            numeric-field review contains zero rows.</p>
-          <p><b>Counting unit:</b> One Submit_ID is kept per registration. An independent CSV check found no within-ID
-            conflicts in rating, size, energy, brand, technology or expiry in the filtered rows. Model names can
-            represent variants. Registrations are not sales or households.</p>
-          <p><b>Transformations:</b> rounded inches = cm x 0.393701; explicit size x rating cohorts; median and count.
-            An
-            independent check also calculates minimum and maximum for Chart 1. The two ranges do not overlap: 532 &lt;
-            550. That proves the direction of all 11 x 65 possible cross-cohort pairings without a pair-join branch.</p>
-          <p><b>Independent sensitivity check:</b> retaining listing variants gives medians 513 and 598.5 kWh/year,
-            rather than registration medians 514 and 598. The direction is unchanged. This does not remove all selection
-            bias.</p>
+          <p><b>Scope:</b> The workflow reads 5,340 raw rows and applies four row filters in order. First, 308 rows sold
+            only
+            in New Zealand (or Fiji and New Zealand) are removed, leaving 5,032 rows that include Australia. Then only
+            Available listings are kept (4,845), then only Approved records (4,844), then only in-date listings, using
+            3 October 2026 as the snapshot date (4,842).</p>
+          <p><b>Quality check and counting unit:</b> A rule check flags any row where Submit_ID, Star2, screen size or
+            annual
+            kWh is missing, Star2 is outside 0-10, or size or kWh is zero or negative. Missing values are never replaced
+            with
+            zero. All 4,842 rows pass, so the check removes nothing. The Duplicate Row Filter then keeps the first row
+            for each
+            Submit_ID, giving 2,702 registrations. Model names can represent variants. Registrations are not sales or
+            households.</p>
+          <p><b>Transformations:</b> An Expression node converts screen size to rounded inches: round(cm x 0.393701).
+            Two Math
+            Formula nodes copy annual kWh into a minimum column and a maximum column, so one GroupBy node can report the
+            median, minimum, maximum and count together. Rule Engine nodes then label the comparison groups, and Row
+            Filter
+            nodes keep only those groups.</p>
+          <p><b>The three comparisons:</b> Chart 1 compares 55″ / 3 stars (n=11, 499-532, median 514) with 75″ / 5 stars
+            (n=65, 550-612, median 598). Chart 3 compares 65″ / 3 stars with 65″ / 7 stars (n=6 each, medians 696.5 and
+            250.5).
+            Chart 2 uses four sizes (55″, 65″, 75″, 85″) and three ratings (3, 5, 6 stars): 12 cells, each with a median
+            and a
+            count, from n=5 to n=96. The two Chart 1 ranges do not overlap: 532 &lt; 550.</p>
           <p><a class="text-link" href="assets/img/workflow.svg" target="_blank">Open the
               native workflow diagram ↗</a></p><img class="workflow-preview" src="assets/img/workflow.svg"
             alt="The student's simplified KNIME workflow with a left-to-right cleaning spine and three chart branches."
             loading="lazy">
-          <p>The three Bar Chart nodes 21, 25 and 30 have saved executed views. The 26-node workflow does not have a
-            pair-join branch or CSV Writer; the website's chart-data files and additional range/sensitivity checks come
-            from the independent CSV analysis script.</p>
         </div>
       </details>
       <div class="method-grid">
@@ -287,7 +289,7 @@
       <div class="section-heading">
         <div class="section-label"><span class="section-index">06</span>
           <h2 id="data-table-title">The chart values, without the charts</h2>
-        </div><a class="text-link" href="assets/data/star-trap-cohorts.csv" download>Download chart 2 data ↓</a>
+        </div>
       </div>
       <details class="story-details">
         <summary>Show accessible data tables</summary>

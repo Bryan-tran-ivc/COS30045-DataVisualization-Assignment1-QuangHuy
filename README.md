@@ -48,7 +48,7 @@ Because the smaller/low-star group's maximum (532) is below the larger/high-star
 
 An individual illustration is Samsung QA75Q70CA* (Submit_ID 151761, 75 inches, 5 stars, 580 kWh/year) versus Kogan KAQL55Q97T* (171487, 55 inches, 3 stars, 513). The illustration is not the evidence for the whole-cohort finding or a product recommendation.
 
-**Chart 2** uses median-energy lines for 3, 5 and 6 stars at nominal 55, 65, 75 and 85 inches. It is a quantitative size axis, **not a time series**. Different line styles and direct labels complement colour. Twelve cell counts range from 5 to 96 registrations. At 5 stars, the median rises from 332 at 55 inches to 750 at 85 inches. The exact cohort values and counts appear on the page and in assets/data/star-trap-cohorts.csv.
+**Chart 2** uses median-energy lines for 3, 5 and 6 stars at nominal 55, 65, 75 and 85 inches. It is a quantitative size axis, **not a time series**. Different line styles and direct labels complement colour. Twelve cell counts range from 5 to 96 registrations. At 5 stars, the median rises from 332 at 55 inches to 750 at 85 inches. The exact cohort values and counts appear in the accessible data tables on the page.
 
 **Chart 3** fixes nominal size at 65 inches. The 3-star median is 696.5 (n=6); the 7-star median is 250.5 (n=6), about 64.03% lower. This is a descriptive relationship, not an experiment in changing stars. Six observations per group limit generalisation.
 
@@ -102,7 +102,7 @@ The Televisions page shows the diagram of the student's **simplified 26-node KNI
 
 The simplified workflow contains no all-pairs branch, sensitivity branch or CSV Writer. The website's chart data and additional registration-consistency, range and listing-weight sensitivity checks were produced by a separate Python analysis script. The original KNIME screenshots are `assets/img/knime-chart-1.png` through `knime-chart-3.png`; each is identified beside the relevant chart and can be opened at full resolution.
 
-The retained supporting files are `assets/data/star-trap-cohorts.csv`, available through the chart 2 data download, and `assets/data/star-trap-analysis.json`, a machine-readable audit summary. The analysis script and KNIME workflow archive are not included in the current website distribution.
+The chart values are embedded in the page and chart assets. The chart-data CSV, audit JSON, analysis script and KNIME workflow archive are not included in the current website distribution.
 
 ### Privacy
 
@@ -143,21 +143,16 @@ OpenAI Codex assisted with CSS/JavaScript, chart design, independent reproducibi
 │   ├── js/
 │   │   ├── main.js
 │   │   └── televisions.js
-│   ├── img/
-│   │   ├── PowerIcon.png
-│   │   ├── knime-chart-1.png
-│   │   ├── knime-chart-2.png
-│   │   ├── knime-chart-3.png
-│   │   ├── star-rating-grid.svg
-│   │   └── workflow.svg
-│   └── data/
-│       ├── star-trap-analysis.json
-│       └── star-trap-cohorts.csv
+│   └── img/
+│       ├── PowerIcon.png
+│       ├── knime-chart-1.png
+│       ├── knime-chart-2.png
+│       ├── knime-chart-3.png
+│       ├── star-rating-grid.svg
+│       └── workflow.svg
 └── README.md
 ```
 
-The three HTML pages and README stay at the project root. Styles, scripts and images use the recommended `assets/css/`, `assets/js/` and `assets/img/` directories. One additional asset directory is necessary: `assets/data/` holds the chart 2 CSV download and audit summary. This keeps supporting files together under `assets/` while preserving the Televisions page's chart-data download. All website links use relative paths, so the same structure works locally and when deployed in a subdirectory.
+The three HTML pages and README stay at the project root. Styles, scripts and images use the recommended `assets/css/`, `assets/js/` and `assets/img/` directories. All website links use relative paths, so the same structure works locally and when deployed in a subdirectory.
 
 The Home calculator's example wattages and default 30 cents/kWh are not Australian market averages. Its calculation is `watts × hours ÷ 1000` for daily kWh, multiplied by 30 or 365 for monthly/yearly energy, then by `cents per kWh ÷ 100` for estimated cost. It excludes daily supply charges and most usage variability. These illustrative calculator values must not be confused with the labelled annual TV data.
-
-
