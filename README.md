@@ -6,13 +6,7 @@ The user-provided power logo informs the amber palette. The interface takes visu
 
 ## Run the website
 
-Open index.html directly, or serve this directory:
-
-~~~sh
-python3 -m http.server 8765
-~~~
-
-Open http://localhost:8765/televisions.html. All three charts, their interpretations and the data tables work without JavaScript. JavaScript lets the reader change the illustrative tariff. The Home calculator also uses JavaScript.
+Open index.html directly
 
 ## Data Story
 
@@ -26,11 +20,6 @@ Message: **More stars do not guarantee less electricity across different screen 
 
 Desired action: choose a size that meets the household's needs, compare annual kWh on the shortlist, and use the household's own electricity usage rate. Do not upgrade screen size solely because the larger model has more stars.
 
-### Relationship to Exercises 1 and 2
-
-Exercise 1 counts available brand listings after basic cleaning. Exercise 2 explores size frequency, size versus energy, screen technology and grouped averages. It also explicitly prompts research into Star2 and comparisons across sizes.
-
-The **meaning of star ratings is therefore not a wholly original concept absent from Exercise 2**. Exercise 3 permits developing an earlier question into a story. This extension contributes a specific decision question and new analysis: exact size × rating cohorts, complete non-overlapping ranges, the implication for all 715 possible cross-cohort pairings, same-size conditioning and sensitivity to listing-row weighting. It replaces the old February page that mainly repeated the size-versus-energy exploration.
 
 ### Visualisation design guidelines
 
@@ -53,7 +42,6 @@ The **meaning of star ratings is therefore not a wholly original concept absent 
 | Recommendation, 2:20–2:45 | What should I do in a store? | Short decision rule and optional tariff illustration | Different sizes: compare annual kWh. Similar sizes and features: use stars too. |
 | Method, 2:45–3:00 | Can I trust this conclusion? | Workflow diagram and short scope disclosure | October only, one row per registration, labelled test energy rather than household bills. |
 
-The page scrolls in this order without a timeline or presentation-mode controls. Detailed workflow steps and tables are expandable.
 
 ### Findings and chart choices
 
@@ -142,9 +130,8 @@ Avoid shaming a brand or implying that an energy label is dishonest. The stars a
 
 ## AI Declaration
 
-OpenAI Codex assisted with dataset analysis, selection and checking of the story, HTML/CSS/JavaScript, chart design, independent reproducibility scripts, README, presenter notes and an earlier KNIME workflow draft. The student supplied the brief, CSV and logo, chose the final star-rating direction, simplified the KNIME workflow and supplied screenshots of its three Bar Chart views. Codex placed those screenshots and the workflow diagram on the page.
+OpenAI Codex assisted with CSS/JavaScript, chart design, independent reproducibility scripts, README. The student supplied the detailed description, CSV and logo, chose the final star-rating direction, making the KNIME workflow and supplied screenshots of its three Bar Chart views. Codex placed those screenshots and the workflow diagram on the page.
 
-The three chart nodes in the student-supplied KNIME workflow have saved executed states. The reported statistics were separately checked against the CSV script. The student should understand the workflow's groupings, confirm the CSV's provenance/licence, and review all AI-assisted work before submission. GitHub Classroom submission and deployment have not been performed.
 
 ## Site structure
 
@@ -176,6 +163,4 @@ The three HTML pages and README stay at the project root. Styles, scripts and im
 
 The Home calculator's example wattages and default 30 cents/kWh are not Australian market averages. Its calculation is `watts × hours ÷ 1000` for daily kWh, multiplied by 30 or 365 for monthly/yearly energy, then by `cents per kWh ÷ 100` for estimated cost. It excludes daily supply charges and most usage variability. These illustrative calculator values must not be confused with the labelled annual TV data.
 
-## Submission notes
 
-Place the files in the COS30045 GitHub Classroom repository and deploy the same relative folder structure to Mercury. Neither upload has been performed here. Include the workflow diagram, chart screenshots and retained chart data. Before presenting, be ready to explain why stars account for size, why 715 comparisons are not 715 independent observations, why registrations differ from listing variants, and why the 30-cent tariff is only an example.
