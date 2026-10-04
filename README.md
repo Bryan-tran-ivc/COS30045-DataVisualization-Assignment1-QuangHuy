@@ -98,7 +98,7 @@ Brand case variants are not merged because there is no brand-level ranking. Chan
 
 ### KNIME workflow and supporting evidence
 
-The Televisions page shows the diagram of the student's **simplified 26-node KNIME workflow** at `assets/img/workflow.svg`. Its left-to-right spine and short chart branches match the EX2-style layout. Three Bar Chart nodes (21, 25 and 30) have saved executed states; the screenshots embedded on Televisions are the actual views supplied by the student. The website's custom range, line and same-size plots use independently checked cohort values and give the groups clearer labels than the native screenshots.
+The Televisions page shows the diagram of the student's **simplified 29-node KNIME workflow** at `assets/img/workflow.svg`. Its left-to-right spine and short chart branches match the EX2-style layout. Three Bar Chart nodes (21, 25 and 30) have saved executed states; the screenshots embedded on Televisions are the actual views supplied by the student. The website's custom range, line and same-size plots use independently checked cohort values and give the groups clearer labels than the native screenshots.
 
 The simplified workflow contains no all-pairs branch, sensitivity branch or CSV Writer. The website's chart data and additional registration-consistency, range and listing-weight sensitivity checks were produced by a separate Python analysis script. The original KNIME screenshots are `assets/img/knime-chart-1.png` through `knime-chart-3.png`; each is identified beside the relevant chart and can be opened at full resolution.
 
