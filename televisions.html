@@ -227,37 +227,54 @@
         <div>
           <p class="eyebrow">How the evidence was prepared</p>
           <h3>From raw registrations to a buying comparison</h3>
-          <p>The full 26-node KNIME workflow can be observed below.</p>
+          <p>The full 29-node KNIME workflow can be observed below.</p>
         </div>
       </div>
       <details class="story-details">
         <summary>See the workflow and processing checks</summary>
         <div class="details-body">
-          <p><b>Scope:</b> The workflow reads 5,340 raw rows and applies four row filters in order. First, 308 rows sold
-            only
-            in New Zealand (or Fiji and New Zealand) are removed, leaving 5,032 rows that include Australia. Then only
-            Available listings are kept (4,845), then only Approved records (4,844), then only in-date listings, using
-            3 October 2026 as the snapshot date (4,842).</p>
-          <p><b>Quality check and counting unit:</b> A rule check flags any row where Submit_ID, Star2, screen size or
-            annual
-            kWh is missing, Star2 is outside 0-10, or size or kWh is zero or negative. Missing values are never replaced
-            with
-            zero. All 4,842 rows pass, so the check removes nothing. The Duplicate Row Filter then keeps the first row
-            for each
-            Submit_ID, giving 2,702 registrations. Model names can represent variants. Registrations are not sales or
-            households.</p>
-          <p><b>Transformations:</b> An Expression node converts screen size to rounded inches: round(cm x 0.393701).
-            Two Math
-            Formula nodes copy annual kWh into a minimum column and a maximum column, so one GroupBy node can report the
-            median, minimum, maximum and count together. Rule Engine nodes then label the comparison groups, and Row
-            Filter
-            nodes keep only those groups.</p>
-          <p><b>The three comparisons:</b> Chart 1 compares 55″ / 3 stars (n=11, 499-532, median 514) with 75″ / 5 stars
-            (n=65, 550-612, median 598). Chart 3 compares 65″ / 3 stars with 65″ / 7 stars (n=6 each, medians 696.5 and
-            250.5).
-            Chart 2 uses four sizes (55″, 65″, 75″, 85″) and three ratings (3, 5, 6 stars): 12 cells, each with a median
-            and a
-            count, from n=5 to n=96. The two Chart 1 ranges do not overlap: 532 &lt; 550.</p>
+          <p>
+            <b>Scope:</b> The 28-node workflow reads 5,340 raw rows from the 3 October 2026 dataset. The market filter
+            removes
+            308 records sold only in New Zealand, in Fiji and New Zealand, or with a blank <code>SoldIn</code> value,
+            leaving
+            5,032. It then keeps Available listings (4,845), Approved records (4,844) and registrations still in date on
+            3 October 2026 (4,842).
+          </p>
+
+          <p>
+            <b>Quality check and counting unit:</b> A Rule Engine flags records where <code>Submit_ID</code>,
+            <code>Star2</code>, screen size or annual kWh is missing, <code>Star2</code> is outside 0-10, or size or kWh
+            is zero
+            or negative. Missing values are never replaced with zero, and all 4,842 records pass. A Duplicate Row Filter
+            keeps
+            the first record for each <code>Submit_ID</code>, giving 2,702 unique registrations. Registrations are not
+            sales,
+            households or market share.
+          </p>
+
+          <p>
+            <b>Processing:</b> An Expression node converts screen size to rounded inches:
+            <code>round(cm x 0.393701)</code>.
+            Two Math Formula nodes copy annual kWh for minimum and maximum aggregation, and Rule Engine and Row Filter
+            nodes
+            create the comparison groups. For Chart 2, GroupBy calculates the median kWh and count for each size and
+            rating,
+            Pivot reshapes the 12 cohorts into four sizes with 3-, 5- and 6-star columns, and Sorter, Column Renamer and
+            Line
+            Plot draw the three rating lines across sizes.
+          </p>
+
+          <p>
+            <b>The three comparisons:</b> Chart 1 compares 55″ / 3-star TVs (n=11, 499-532, median 514 kWh/year) with
+            75″ / 5-star TVs (n=65, 550-612, median 598). The ranges do not overlap, since 532 &lt; 550. Chart 2 covers
+            12
+            size-by-rating cohorts of 5 to 96 registrations. Chart 3 compares 65″ / 3-star and 65″ / 7-star TVs (n=6
+            each,
+            medians 696.5 and 250.5). Together they show that stars are useful at a similar size, while annual kWh is
+            the safer
+            measure across different sizes.
+          </p>
           <p><a class="text-link" href="assets/img/workflow.svg" target="_blank">Open the
               native workflow diagram ↗</a></p><img class="workflow-preview" src="assets/img/workflow.svg"
             alt="The student's simplified KNIME workflow with a left-to-right cleaning spine and three chart branches."
