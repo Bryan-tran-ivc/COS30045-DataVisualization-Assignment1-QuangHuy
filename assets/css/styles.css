@@ -3696,23 +3696,19 @@ tbody tr:hover {
 }
 
 .knime-evidence a {
-  position: relative;
   display: block;
-  overflow: hidden;
   width: 100%;
-  aspect-ratio: 5 / 1;
   border: 1px solid var(--border);
   border-radius: 6px;
   background: #fff;
+  overflow: hidden;
 }
 
 .knime-evidence img {
-  position: absolute;
-  width: 185%;
-  max-width: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  left: -25.5%;
-  top: -25%;
 }
 
 .knime-evidence small {

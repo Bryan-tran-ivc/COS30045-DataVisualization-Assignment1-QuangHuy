@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-AU">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Understand appliance energy use in Australia with Wattwise. Estimate electricity consumption and running costs with a simple interactive calculator.">
+  <meta name="description"
+    content="Understand appliance energy use in Australia with Wattwise. Estimate electricity consumption and running costs with a simple interactive calculator.">
   <meta name="theme-color" content="#fafaf8">
   <title>Appliance Energy Consumption Website | Wattwise</title>
   <link rel="icon" type="image/png" href="assets/img/PowerIcon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
 </head>
+
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
@@ -34,94 +37,226 @@
         <h1 id="home-title">Your energy, <span class="serif-accent">made clear.</span></h1>
         <p class="intro-description">Small appliances. Everyday habits. See how it all adds up.</p>
       </div>
-      <div class="intro-context"><span class="context-rule"></span><span>Made for Australian households<br><strong>Measured in kWh. Priced in AUD.</strong></span></div>
+      <div class="intro-context"><span class="context-rule"></span><span>Made for Australian
+          households<br><strong>Measured in kWh. Priced in AUD.</strong></span></div>
     </section>
 
     <section class="calculator-section" aria-labelledby="calculator-title">
       <div class="section-heading">
-        <div class="section-label"><span class="section-index">01</span><h2 id="calculator-title">Explore your energy</h2></div>
+        <div class="section-label"><span class="section-index">01</span>
+          <h2 id="calculator-title">Explore your energy</h2>
+        </div>
         <span class="subtle-label">Change an input. See the impact.</span>
       </div>
       <div class="calculator-card">
         <form id="energy-calculator" class="calculator-form" novalidate>
-          <div class="form-intro"><div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m13 3-8 11h6l-1 7 9-12h-6l1-6Z"/></svg></div><div><h3>Your everyday appliance</h3><p>A few details are all you need.</p></div></div>
+          <div class="form-intro">
+            <div class="icon-tile"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m13 3-8 11h6l-1 7 9-12h-6l1-6Z" />
+              </svg></div>
+            <div>
+              <h3>Your everyday appliance</h3>
+              <p>A few details are all you need.</p>
+            </div>
+          </div>
           <div class="field">
             <label for="appliance">Choose an appliance</label>
-            <div class="select-wrap"><select id="appliance" name="appliance" aria-describedby="appliance-help"><option value="100">Television · 100 W</option><option value="60">Laptop · 60 W</option><option value="10">LED light · 10 W</option><option value="2000">Electric kettle · 2,000 W</option><option value="custom">Custom appliance</option></select><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></div>
+            <div class="select-wrap"><select id="appliance" name="appliance" aria-describedby="appliance-help">
+                <option value="100">Television · 100 W</option>
+                <option value="60">Laptop · 60 W</option>
+                <option value="10">LED light · 10 W</option>
+                <option value="2000">Electric kettle · 2,000 W</option>
+                <option value="custom">Custom appliance</option>
+              </select><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m8 10 4 4 4-4" />
+              </svg></div>
             <p class="field-hint" id="appliance-help">Illustrative wattages. Check your appliance for its rating.</p>
           </div>
           <div class="field-row">
-            <div class="field"><label for="watts">Power usage</label><div class="input-wrap"><input id="watts" name="watts" type="number" min="1" max="100000" step="any" value="100" inputmode="decimal" aria-describedby="watts-error"><span class="input-unit">W</span></div><p class="field-error" id="watts-error" hidden></p></div>
-            <div class="field"><label for="hours">Daily use</label><div class="input-wrap"><input id="hours" name="hours" type="number" min="0" max="24" step="any" value="4" inputmode="decimal" aria-describedby="hours-error"><span class="input-unit">hours</span></div><p class="field-error" id="hours-error" hidden></p></div>
+            <div class="field"><label for="watts">Power usage</label>
+              <div class="input-wrap"><input id="watts" name="watts" type="number" min="1" max="100000" step="any"
+                  value="100" inputmode="decimal" aria-describedby="watts-error"><span class="input-unit">W</span></div>
+              <p class="field-error" id="watts-error" hidden></p>
+            </div>
+            <div class="field"><label for="hours">Daily use</label>
+              <div class="input-wrap"><input id="hours" name="hours" type="number" min="0" max="24" step="any" value="4"
+                  inputmode="decimal" aria-describedby="hours-error"><span class="input-unit">hours</span></div>
+              <p class="field-error" id="hours-error" hidden></p>
+            </div>
           </div>
-          <div class="field"><label for="price">Your electricity rate</label><div class="input-wrap"><input id="price" name="price" type="number" min="0" max="1000" step="any" value="30" inputmode="decimal" aria-describedby="price-help price-error"><span class="input-unit">cents / kWh</span></div><p class="field-hint" id="price-help">Use the usage rate on your electricity bill. Excludes supply fees.</p><p class="field-error" id="price-error" hidden></p></div>
-          <div class="form-bottom"><span class="live-caption"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Updates as you type</span><button class="button button-dark" type="submit">Calculate <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button></div>
+          <div class="field"><label for="price">Your electricity rate</label>
+            <div class="input-wrap"><input id="price" name="price" type="number" min="0" max="1000" step="any"
+                value="30" inputmode="decimal" aria-describedby="price-help price-error"><span class="input-unit">cents
+                / kWh</span></div>
+            <p class="field-hint" id="price-help">Use the usage rate on your electricity bill. Excludes supply fees.</p>
+            <p class="field-error" id="price-error" hidden></p>
+          </div>
+          <div class="form-bottom"><span class="live-caption"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m9 12 2 2 4-4" />
+                <circle cx="12" cy="12" r="9" />
+              </svg>Updates as you type</span><button class="button button-dark" type="submit">Calculate <svg
+                viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg></button></div>
         </form>
 
         <div class="results-panel" aria-labelledby="results-title">
-          <div class="result-header"><span id="results-title" class="eyebrow">Your energy snapshot</span><span class="estimate-badge">Estimate</span></div>
-          <div class="cost-highlight"><p>Estimated annual running cost</p><div class="cost-number"><span id="annual-cost">$43.80</span><span class="currency-label">AUD / year</span></div><p class="result-summary" id="result-summary">Your television, used for 4 hours a day.</p></div>
-          <div class="energy-stats"><div><span class="stat-label">Daily energy</span><strong id="daily-energy">0.40</strong><span class="stat-unit">kWh / day</span></div><div><span class="stat-label">Monthly energy</span><strong id="monthly-energy">12.00</strong><span class="stat-unit">kWh / 30 days</span></div><div><span class="stat-label">Yearly energy</span><strong id="yearly-energy">146.00</strong><span class="stat-unit">kWh / 365 days</span></div></div>
+          <div class="result-header"><span id="results-title" class="eyebrow">Your energy snapshot</span><span
+              class="estimate-badge">Estimate</span></div>
+          <div class="cost-highlight">
+            <p>Estimated annual running cost</p>
+            <div class="cost-number"><span id="annual-cost">$43.80</span><span class="currency-label">AUD / year</span>
+            </div>
+            <p class="result-summary" id="result-summary">Your television, used for 4 hours a day.</p>
+          </div>
+          <div class="energy-stats">
+            <div><span class="stat-label">Daily energy</span><strong id="daily-energy">0.40</strong><span
+                class="stat-unit">kWh / day</span></div>
+            <div><span class="stat-label">Monthly energy</span><strong id="monthly-energy">12.00</strong><span
+                class="stat-unit">kWh / 30 days</span></div>
+            <div><span class="stat-label">Yearly energy</span><strong id="yearly-energy">146.00</strong><span
+                class="stat-unit">kWh / 365 days</span></div>
+          </div>
           <div class="energy-timeline">
-            <div class="timeline-caption"><span>Cumulative energy · kWh</span><strong id="timeline-total">146 kWh</strong></div>
+            <div class="timeline-caption"><span>Cumulative energy · kWh</span><strong id="timeline-total">146
+                kWh</strong></div>
             <div class="timeline-plot">
-              <div class="timeline-y-axis" aria-hidden="true"><span id="energy-axis-max">150</span><span id="energy-axis-mid">75</span><span>0</span></div>
-              <svg id="energy-chart" viewBox="0 0 440 90" preserveAspectRatio="none" role="img" aria-labelledby="energy-chart-title energy-chart-description">
+              <div class="timeline-y-axis" aria-hidden="true"><span id="energy-axis-max">150</span><span
+                  id="energy-axis-mid">75</span><span>0</span></div>
+              <svg id="energy-chart" viewBox="0 0 440 90" preserveAspectRatio="none" role="img"
+                aria-labelledby="energy-chart-title energy-chart-description">
                 <title id="energy-chart-title">Cumulative electricity consumption over one year</title>
-                <desc id="energy-chart-description">At 100 watts and 4 hours per day, electricity use increases from 0 to 146 kilowatt-hours in 365 days. The vertical scale is 0 to 150 kWh.</desc>
-                <defs><linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d2932a" stop-opacity="0.23"/><stop offset="100%" stop-color="#d2932a" stop-opacity="0.02"/></linearGradient></defs>
-                <path class="chart-grid" d="M8 8h424M8 44h424M8 80h424"/>
-                <path id="energy-chart-area" class="chart-area" d="M8 80 432 9.92 432 80Z"/>
-                <path id="energy-chart-line" class="chart-line" d="M8 80 432 9.92"/>
-                <circle id="energy-chart-end" class="chart-end" cx="432" cy="9.92" r="4"/>
+                <desc id="energy-chart-description">At 100 watts and 4 hours per day, electricity use increases from 0
+                  to 146 kilowatt-hours in 365 days. The vertical scale is 0 to 150 kWh.</desc>
+                <defs>
+                  <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#d2932a" stop-opacity="0.23" />
+                    <stop offset="100%" stop-color="#d2932a" stop-opacity="0.02" />
+                  </linearGradient>
+                </defs>
+                <path class="chart-grid" d="M8 8h424M8 44h424M8 80h424" />
+                <path id="energy-chart-area" class="chart-area" d="M8 80 432 9.92 432 80Z" />
+                <path id="energy-chart-line" class="chart-line" d="M8 80 432 9.92" />
+                <circle id="energy-chart-end" class="chart-end" cx="432" cy="9.92" r="4" />
               </svg>
             </div>
-            <div class="timeline-x-axis" aria-hidden="true"><span>Day 0</span><span>Day 183</span><span>Day 365</span></div>
+            <div class="timeline-x-axis" aria-hidden="true"><span>Day 0</span><span>Day 183</span><span>Day 365</span>
+            </div>
           </div>
           <p class="calculation-note">Based on constant power usage and your chosen rate.</p>
           <p id="calculator-status" class="sr-only" role="status" aria-live="polite"></p>
-          <noscript><p class="no-script-note">Enable JavaScript to calculate estimates from your inputs.</p></noscript>
+          <noscript>
+            <p class="no-script-note">Enable JavaScript to calculate estimates from your inputs.</p>
+          </noscript>
         </div>
       </div>
     </section>
 
     <section class="learning-section" aria-labelledby="basics-title">
-      <div class="section-heading"><div class="section-label"><span class="section-index">02</span><h2 id="basics-title">A little energy literacy</h2></div><span class="subtle-label">The basics, without the jargon.</span></div>
+      <div class="section-heading">
+        <div class="section-label"><span class="section-index">02</span>
+          <h2 id="basics-title">A little energy literacy</h2>
+        </div><span class="subtle-label">The basics, without the jargon.</span>
+      </div>
       <div class="learning-grid">
-        <article class="learning-card"><span class="learning-symbol">W</span><h3>Power is the starting point.</h3><p>Watts tell you how much power an appliance draws while it runs. Higher watts mean more energy for the same time.</p><span class="card-caption">The appliance rating</span></article>
-        <article class="learning-card"><span class="learning-symbol">kWh</span><h3>Time turns power into energy.</h3><p>A 100 W appliance used for 10 hours consumes 1 kWh. That is the energy your electricity usage is billed in.</p><span class="card-caption">Watts × hours ÷ 1,000</span></article>
-        <article class="learning-card tv-learning-card"><span class="learning-symbol"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></span><h3>Same star. Different cost.</h3><p>Explore how different sample televisions compare when stars vary.</p><a class="text-link" href="televisions.html">Compare televisions <span aria-hidden="true">↗</span></a></article>
+        <article class="learning-card"><span class="learning-symbol">W</span>
+          <h3>Power is the starting point.</h3>
+          <p>Watts tell you how much power an appliance draws while it runs. Higher watts mean more energy for the same
+            time.</p><span class="card-caption">The appliance rating</span>
+        </article>
+        <article class="learning-card"><span class="learning-symbol">kWh</span>
+          <h3>Time turns power into energy.</h3>
+          <p>A 100 W appliance used for 10 hours consumes 1 kWh. That is the energy your electricity usage is billed in.
+          </p><span class="card-caption">Watts x hours ÷ 1,000</span>
+        </article>
+        <article class="learning-card tv-learning-card"><span class="learning-symbol"><svg viewBox="0 0 24 24"
+              fill="none" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="13" rx="2" />
+              <path d="M8 21h8m-4-4v4" />
+            </svg></span>
+          <h3>Same star. Different cost.</h3>
+          <p>Explore how different sample televisions compare when stars vary.</p><a class="text-link"
+            href="televisions.html">Compare televisions <span aria-hidden="true">↗</span></a>
+        </article>
       </div>
     </section>
 
     <section class="info-band televisions-home-link" aria-labelledby="televisions-link-title">
-      <div><p class="eyebrow">Independent analysis · In development</p><h2 id="televisions-link-title">A new question. A deeper look.</h2><p>Follow the next energy story, from a KNIME workflow to evidence-led insights.</p></div>
-      <a class="button button-outline" href="televisions.html">Explore Insights <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
+      <div>
+        <p class="eyebrow">Independent analysis · In development</p>
+        <h2 id="televisions-link-title">A new question. A deeper look.</h2>
+        <p>Follow the next energy story, from a KNIME workflow to evidence-led insights.</p>
+      </div>
+      <a class="button button-outline" href="televisions.html">Explore Insights <svg viewBox="0 0 24 24" fill="none"
+          aria-hidden="true">
+          <path d="M5 12h14m-5-5 5 5-5 5" />
+        </svg></a>
     </section>
 
     <section class="faq-section" aria-labelledby="faq-title">
-      <div class="faq-intro"><span class="section-index">03</span><h2 id="faq-title">Good questions.<br><span class="serif-accent">Clear answers.</span></h2><p>A few things to know about the energy behind your everyday appliances.</p></div>
+      <div class="faq-intro"><span class="section-index">03</span>
+        <h2 id="faq-title">Good questions.<br><span class="serif-accent">Clear answers.</span></h2>
+        <p>A few things to know about the energy behind your everyday appliances.</p>
+      </div>
       <div class="faq-list">
         <div class="faq-item">
-          <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">What does a kilowatt-hour actually mean?<span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" hidden><div class="faq-answer-inner"><p>A kilowatt-hour (kWh) is a unit of energy. Using a 1,000 W appliance for one hour consumes 1 kWh; using a 100 W appliance for ten hours consumes the same amount.</p></div></div>
+          <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-1"
+              id="faq-question-1">What does a kilowatt-hour actually mean?<span class="faq-icon"
+                aria-hidden="true"></span></button></h3>
+          <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" hidden>
+            <div class="faq-answer-inner">
+              <p>A kilowatt-hour (kWh) is a unit of energy. Using a 1,000 W appliance for one hour consumes 1 kWh; using
+                a 100 W appliance for ten hours consumes the same amount.</p>
+            </div>
+          </div>
         </div>
         <div class="faq-item">
-          <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">Where do I find my electricity rate?<span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden><div class="faq-answer-inner"><p>Look for the usage charge, expressed in cents per kWh, on your Australian electricity bill. The 30 cents in this calculator is an example, not a current market average. For time-of-use plans, use the rate that applies when you run the appliance.</p></div></div>
+          <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-2"
+              id="faq-question-2">Where do I find my electricity rate?<span class="faq-icon"
+                aria-hidden="true"></span></button></h3>
+          <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden>
+            <div class="faq-answer-inner">
+              <p>Look for the usage charge, expressed in cents per kWh, on your Australian electricity bill. The 30
+                cents in this calculator is an example, not a current market average. For time-of-use plans, use the
+                rate that applies when you run the appliance.</p>
+            </div>
+          </div>
         </div>
         <div class="faq-item">
-          <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">Why might my real bill be different?<span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden><div class="faq-answer-inner"><p>This calculator assumes constant power use. Appliances can draw different amounts as settings and operating cycles change. Daily supply charges, standby use, solar exports and other appliances are outside this estimate.</p></div></div>
+          <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-3"
+              id="faq-question-3">Why might my real bill be different?<span class="faq-icon"
+                aria-hidden="true"></span></button></h3>
+          <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden>
+            <div class="faq-answer-inner">
+              <p>This calculator assumes constant power use. Appliances can draw different amounts as settings and
+                operating cycles change. Daily supply charges, standby use, solar exports and other appliances are
+                outside this estimate.</p>
+            </div>
+          </div>
         </div>
         <div class="faq-item">
-          <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">How should I compare two appliances?<span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden><div class="faq-answer-inner"><p>Keep hours of use and the electricity rate the same, then compare the energy or cost values. For televisions, compare models of similar screen size and check the product's actual energy rating before buying.</p></div></div>
+          <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-4"
+              id="faq-question-4">How should I compare two appliances?<span class="faq-icon"
+                aria-hidden="true"></span></button></h3>
+          <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden>
+            <div class="faq-answer-inner">
+              <p>Keep hours of use and the electricity rate the same, then compare the energy or cost values. For
+                televisions, compare models of similar screen size and check the product's actual energy rating before
+                buying.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><a class="footer-brand" href="index.html">wattwise.</a><p>© <span data-current-year>2026</span> Huy Tran</p><p class="ai-note">Created with assistance from OpenAI Codex. <a href="about.html#ai-acknowledgement">AI acknowledgement ↗</a></p></div></footer>
+  <footer class="site-footer">
+    <div class="container footer-inner"><a class="footer-brand" href="index.html">wattwise.</a>
+      <p>© <span data-current-year>2026</span> Huy Tran</p>
+      <p class="ai-note">Created with assistance from OpenAI Codex. <a href="about.html#ai-acknowledgement">AI
+          acknowledgement ↗</a></p>
+    </div>
+  </footer>
 </body>
+
 </html>
