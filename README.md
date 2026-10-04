@@ -31,28 +31,13 @@ Desired action: choose a size that meets the household's needs, compare annual k
 - Include small-group warnings, accessible tables and direct series labels.
 - Do not claim a causal effect of “adding stars”, brand superiority, buyer misunderstanding rates or guaranteed bill savings.
 
-### Storyboard and three-minute speaking path
+### Storyboard
 
-1. ISSUE:
-More stars = lower bill?
-Not always!	
-2. SHOW THE PROBLEM:
-55" 3-star TV: 499–532 kWh/year
-75" 5-star TV: 550–612 kWh/year
-The 5-star TV uses more.	
-3. WHY?
-Stars only compare TVs of similar size.
-A bigger TV uses more energy, even with more stars.
-4. STARS STILL HELP:
-Same size (65"):
-Fewer stars: 696.5 kWh/year
-More stars: 250.5 kWh/year
-About 64% less	
-5. RECOMMENDATION:
-Different sizes → compare kWh/year
-Same size → compare stars	6. CAN WE TRUST IT?
-October data only
-Test energy, not real household bills
+
+| | | |
+| --- | --- | --- |
+| **Issue:**<br>More stars = smaller bill?<br>Not always! | **Demonstrate issue:**<br>show 75" 5-star vs 55" 3-star<br>annual kWh range of each (chart 1)<br>5-star uses more, in all 715 pairs | **Why it happens:**<br>show 3 star-rating lines across 4 TV sizes (chart 2)<br>stars only compare TVs of similar size |
+| **Do stars still help?**<br>yes, at the same size<br>show 65" TVs, fewer vs more stars (chart 3) | **Show evidence:**<br>696.5 vs 250.5 kWh/year<br>about 64% less<br>(only 6 TVs per group) | **RECOMMENDATION:**<br>different sizes → compare kWh/year<br>similar size → stars help too |
 
 
 ### Findings and chart choices
