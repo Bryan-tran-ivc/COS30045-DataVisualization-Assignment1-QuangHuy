@@ -3565,6 +3565,23 @@ tbody tr:hover {
   margin-right: 68px;
 }
 
+.star-story .same-size-bars {
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.star-story .same-size-bars .story-bar-fill {
+  background: var(--bar-color);
+}
+
+.star-story .same-size-bars .story-bar-track::before {
+  background: linear-gradient(to right,
+      transparent calc(26.667% - 1px), #deded2 calc(26.667% - 1px), #deded2 26.667%,
+      transparent 26.667%, transparent calc(53.333% - 1px), #deded2 calc(53.333% - 1px), #deded2 53.333%,
+      transparent 53.333%, transparent calc(80% - 1px), #deded2 calc(80% - 1px), #deded2 80%,
+      transparent 80%);
+}
+
 .star-story .is-focus .story-bar-fill {
   background: #39716b;
 }
